@@ -5,6 +5,8 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
+import com.teamkode.smartlist.data.local.relation.AnotacaoComCategoria
 import com.teamkode.smartlist.domain.Anotacao
 import kotlinx.coroutines.flow.Flow
 
@@ -21,4 +23,8 @@ interface AnotacaoDao {
 
     @Query("SELECT * FROM anotacoes WHERE id = :itemId")
     suspend fun getAnotacaoById(itemId: Int): Anotacao?
+
+    @Transaction
+    @Query("SELECT * FROM anotacoes")
+    fun getAnotacaoComCategoria(): Flow<List<AnotacaoComCategoria>>
 }
