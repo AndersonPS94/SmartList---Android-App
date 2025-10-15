@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
+import com.teamkode.smartlist.data.local.entity.AnotacaoEntity
 import com.teamkode.smartlist.data.local.relation.AnotacaoComCategoria
 import com.teamkode.smartlist.domain.Anotacao
 import kotlinx.coroutines.flow.Flow
@@ -13,16 +14,19 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface AnotacaoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAnotacao(item: Anotacao)
+    suspend fun insertAnotacao(item: AnotacaoEntity)
 
     @Delete
-    suspend fun deleteAnotacao(item: Anotacao)
+    suspend fun deleteAnotacao(item: AnotacaoEntity)
 
     @Query("SELECT * FROM anotacoes ORDER BY data DESC")
-    fun getAllAnotacao(): Flow<List<Anotacao>>
+    fun getAllAnotacao(): Flow<List<AnotacaoComCategoria>>
+
+    @Query("SELECT * FROM anotacoes WHERE anotacao LIKE '%' || :texto || '%'")
+    suspend fun getAnotacaoByText(texto:String): List<AnotacaoComCategoria>
 
     @Query("SELECT * FROM anotacoes WHERE id = :itemId")
-    suspend fun getAnotacaoById(itemId: Int): Anotacao?
+    suspend fun getAnotacaoById(itemId: Int): AnotacaoComCategoria
 
     @Transaction
     @Query("SELECT * FROM anotacoes")

@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 data class Anotacao(
     val id:Long,
     val titulo:String,
-    val categoria:Categorias,
+    val categoriaId:Long,
     val anotacao:String,
     val data: LocalDateTime
 )
