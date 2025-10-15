@@ -17,8 +17,8 @@ interface CategoriasDao {
     suspend fun deleteCategoria(item: Categorias)
 
     @Query("SELECT * FROM categoria")
-    fun getAllAnotacao(): Flow<List<Categorias>>
+    fun getAllCategoria(): Flow<List<Categorias>>
 
     @Query("SELECT * FROM categoria WHERE id = :itemId")
-    suspend fun getAnotacaoById(itemId: Int): Categorias?
+    suspend fun getCategoriaById(itemId: Int): Categorias?
 }
