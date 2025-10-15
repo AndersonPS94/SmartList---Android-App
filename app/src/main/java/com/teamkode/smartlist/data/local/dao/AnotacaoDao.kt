@@ -9,7 +9,7 @@ import com.teamkode.smartlist.domain.Anotacao
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface AnoacaoDao {
+interface AnotacaoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAnotacao(item: Anotacao)
 
