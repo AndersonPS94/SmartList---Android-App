@@ -22,5 +22,5 @@ data class AnotacaoEntity(
     val titulo: String,
     val categoriaId: Long,
     val anotacao: String,
-    val data: LocalDateTime
+    val data: LocalDateTime = LocalDateTime.now()
 )

@@ -5,20 +5,25 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.teamkode.smartlist.data.local.entity.CategoriasEntity
 import com.teamkode.smartlist.domain.Categorias
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CategoriasDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCategoria(item: Categorias)
+    suspend fun insertCategoria(item: CategoriasEntity)
 
     @Delete
-    suspend fun deleteCategoria(item: Categorias)
+    suspend fun deleteCategoria(item: CategoriasEntity)
 
     @Query("SELECT * FROM categoria")
-    fun getAllCategoria(): Flow<List<Categorias>>
+    fun getAllCategoria(): Flow<List<CategoriasEntity>>
 
     @Query("SELECT * FROM categoria WHERE id = :itemId")
-    suspend fun getCategoriaById(itemId: Int): Categorias?
+    suspend fun getCategoriaById(itemId: Int): CategoriasEntity?
+
+    @Query("SELECT * FROM categoria WHERE categoria LIKE '%' || :texto ||'%'")
+    suspend fun getCategoriaByText(texto: String): List<CategoriasEntity>
 }

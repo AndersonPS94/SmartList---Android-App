@@ -19,14 +19,18 @@ interface AnotacaoDao {
     @Delete
     suspend fun deleteAnotacao(item: AnotacaoEntity)
 
+    @Transaction
     @Query("SELECT * FROM anotacoes ORDER BY data DESC")
     fun getAllAnotacao(): Flow<List<AnotacaoComCategoria>>
 
+    @Transaction
     @Query("SELECT * FROM anotacoes WHERE anotacao LIKE '%' || :texto || '%'")
     suspend fun getAnotacaoByText(texto:String): List<AnotacaoComCategoria>
 
+    @Transaction
     @Query("SELECT * FROM anotacoes WHERE id = :itemId")
     suspend fun getAnotacaoById(itemId: Int): AnotacaoComCategoria
+
 
     @Transaction
     @Query("SELECT * FROM anotacoes")
