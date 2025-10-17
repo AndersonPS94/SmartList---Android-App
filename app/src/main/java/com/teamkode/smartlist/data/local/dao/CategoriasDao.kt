@@ -23,4 +23,7 @@ interface CategoriasDao {
 
     @Query("SELECT * FROM categoria WHERE id = :itemId")
     suspend fun getCategoriaById(itemId: Int): CategoriasEntity?
+
+    @Query("SELECT * FROM categoria WHERE categoria LIKE '%' || :texto ||'%'")
+    suspend fun getCategoriaByText(texto: String): List<CategoriasEntity>
 }

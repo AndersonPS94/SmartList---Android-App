@@ -31,6 +31,7 @@ interface AnotacaoDao {
     @Query("SELECT * FROM anotacoes WHERE id = :itemId")
     suspend fun getAnotacaoById(itemId: Int): AnotacaoComCategoria
 
+
     @Transaction
     @Query("SELECT * FROM anotacoes")
     fun getAnotacaoComCategoria(): Flow<List<AnotacaoComCategoria>>
