@@ -1,0 +1,22 @@
+package com.teamkode.smartlist.di
+
+import com.teamkode.smartlist.domain.repository.ShoppingItemRepository
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+object AppModule {
+
+    @Provides
+    @Singleton
+    fun provideShoppingItemRepository(
+        db: ShoppingItemDatabase
+    ) : ShoppingItemRepository {
+        return ShoppingItemRepositoryImpl(db.ShoppingItemDao)
+
+    }
+}
