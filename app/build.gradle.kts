@@ -105,4 +105,7 @@ dependencies {
 
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // StatusBarColor
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.27.0")
 }
