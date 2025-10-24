@@ -3,18 +3,12 @@ package com.teamkode.smartlist
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
-import com.teamkode.smartlist.ui.theme.SmartListTheme
+import com.teamkode.smartlist.ui.theme.AppTheme
+import com.teamkode.smartlist.ui.view.addItemScreenView.AddItemScreen
+import com.teamkode.smartlist.ui.view.categoriesScreenView.CategoriesScreen
+import com.teamkode.smartlist.ui.view.homeScreenView.HomeScreen
 import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
@@ -32,30 +26,9 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-            SmartListTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+            AppTheme {
+                HomeScreen({})
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SmartListTheme {
-        Greeting("Android")
     }
 }

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SmartList</string>
+    <string name="txt_adicionar_item">Adicionar Item</string>
+    <string name="txt_categorias">Categorias</string>
+    <string name="txt_lista_de_compras">Lista de Compras</string>
+    <string name="txt_nome_do_item">Nome do Item</string>
+    <string name="txt_o_que_voce_precisa_comprar">O que você precisa comprar?</string>
+    <string name="txt_selecionar_categoria">Selecionar Categoria</string>
+    <string name="txt_buscar_itens">Buscar itens</string>
+    <string name="txt_sugestoes_inteligentes">Sugestôes Inteligentes</string>
+    <string name="txt_minhas_categorias">Minhas Categorias</string>
 </resources>
