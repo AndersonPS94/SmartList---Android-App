@@ -14,19 +14,19 @@ import com.teamkode.smartlist.domain.DomainConstantes
 
 @Database(entities = [AnotacaoEntity::class, CategoriasEntity::class], version = 1, exportSchema = false)
 @TypeConverters(LocalDateTimeConverter::class)
-abstract class SmartListDataBase() : RoomDatabase() {
+abstract class ShoppingItemDatabase() : RoomDatabase() {
 
 abstract fun anotacaoDao(): AnotacaoDao
 abstract fun categoriasDao(): CategoriasDao
 
     companion object {
         @Volatile
-        private var INSTANCE: SmartListDataBase? = null
+        private var INSTANCE: ShoppingItemDatabase? = null
 
-        fun getDatabase(context: Context): SmartListDataBase {
+        fun getDatabase(context: Context): ShoppingItemDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context.applicationContext, SmartListDataBase::class.java,
+                    context.applicationContext, ShoppingItemDatabase::class.java,
                     DomainConstantes.DATABASE_SMARTLIST
                 ).build()
 
