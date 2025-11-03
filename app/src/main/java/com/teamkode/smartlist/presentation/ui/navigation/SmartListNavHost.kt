@@ -1,4 +1,4 @@
-package com.teamkode.smartlist.ui.navigation
+package com.teamkode.smartlist.presentation.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

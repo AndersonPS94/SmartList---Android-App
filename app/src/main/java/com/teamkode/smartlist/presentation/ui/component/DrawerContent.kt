@@ -1,11 +1,11 @@
-package com.teamkode.smartlist.ui.component
+package com.teamkode.smartlist.presentation.ui.component
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.teamkode.smartlist.ui.navigation.Screen
+import com.teamkode.smartlist.presentation.ui.navigation.Screen
 
 @Composable
 fun DrawerContent(onNavigate: (String) -> Unit) {

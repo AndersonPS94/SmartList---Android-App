@@ -1,4 +1,4 @@
-package com.teamkode.smartlist
+package com.teamkode.smartlist.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,16 +8,21 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.ModalNavigationDrawer
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.rememberDrawerState
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.rememberNavController
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
-import com.teamkode.smartlist.ui.component.DrawerContent
-import com.teamkode.smartlist.ui.navigation.Screen
-import com.teamkode.smartlist.ui.navigation.SmartListNavHost
-import com.teamkode.smartlist.ui.theme.SmartListTheme
+import androidx.navigation.compose.rememberNavController
+import com.teamkode.smartlist.presentation.ui.component.DrawerContent
+import com.teamkode.smartlist.presentation.ui.navigation.Screen
+import com.teamkode.smartlist.presentation.ui.navigation.SmartListNavHost
+import com.teamkode.smartlist.presentation.ui.theme.SmartListTheme
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -59,7 +64,7 @@ class MainActivity : ComponentActivity() {
                     }
                 ) {
                     Scaffold(
-                        modifier = Modifier.fillMaxSize(),
+                        modifier = Modifier.Companion.fillMaxSize(),
                         floatingActionButton = {
                             FloatingActionButton(
                                 onClick = {
@@ -72,7 +77,7 @@ class MainActivity : ComponentActivity() {
                     ) { innerPadding ->
                         SmartListNavHost(
                             navController = navController,
-                            modifier = Modifier.padding(innerPadding)
+                            modifier = Modifier.Companion.padding(innerPadding)
                         )
                     }
                 }

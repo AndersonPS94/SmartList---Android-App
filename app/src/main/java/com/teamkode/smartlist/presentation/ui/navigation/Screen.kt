@@ -1,4 +1,4 @@
-package com.teamkode.smartlist.ui.navigation
+package com.teamkode.smartlist.presentation.ui.navigation
 
 sealed class Screen(val route: String) {
     object ShoppingList : Screen("shopping_list")

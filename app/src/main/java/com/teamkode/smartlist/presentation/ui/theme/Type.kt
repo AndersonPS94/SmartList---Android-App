@@ -1,4 +1,4 @@
-package com.teamkode.smartlist.ui.theme
+package com.teamkode.smartlist.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
