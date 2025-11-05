@@ -8,7 +8,6 @@ import androidx.room.Query
 import androidx.room.Transaction
 import com.teamkode.smartlist.data.local.entity.AnotacaoEntity
 import com.teamkode.smartlist.data.local.relation.AnotacaoComCategoria
-import com.teamkode.smartlist.domain.Anotacao
 import kotlinx.coroutines.flow.Flow
 
 @Dao

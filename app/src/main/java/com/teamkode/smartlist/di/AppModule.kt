@@ -1,5 +1,6 @@
 package com.teamkode.smartlist.di
 
+import com.teamkode.smartlist.data.local.database.ShoppingItemDatabase
 import com.teamkode.smartlist.domain.repository.ShoppingItemRepository
 import dagger.Module
 import dagger.Provides
@@ -17,6 +18,5 @@ object AppModule {
         db: ShoppingItemDatabase
     ) : ShoppingItemRepository {
         return ShoppingItemRepositoryImpl(db.ShoppingItemDao)
-
     }
 }

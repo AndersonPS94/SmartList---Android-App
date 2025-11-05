@@ -7,6 +7,6 @@ import com.teamkode.smartlist.data.local.entity.CategoriasEntity
 
 data class AnotacaoComCategoria(
     @Embedded val anotacao: AnotacaoEntity,
-    @Relation(parentColumn = "categoriaId", entityColumn = "id")
+    @Relation(parentColumn = "categoria_id", entityColumn = "id")
     val categoria : CategoriasEntity
 )
