@@ -6,18 +6,15 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.teamkode.smartlist.data.converters.LocalDateTimeConverter
-import com.teamkode.smartlist.data.local.dao.CategoriasDao
 import com.teamkode.smartlist.data.local.dao.ShoppingItemDao
-import com.teamkode.smartlist.data.local.entity.CategoriasEntity
 import com.teamkode.smartlist.data.local.entity.ShoppingItemEntity
 import com.teamkode.smartlist.domain.DomainConstantes
 
-@Database(entities = [ShoppingItemEntity::class, CategoriasEntity::class], version = 1, exportSchema = false)
+@Database(entities = [ShoppingItemEntity::class], version = 1, exportSchema = false)
 @TypeConverters(LocalDateTimeConverter::class)
 abstract class ShoppingItemDatabase() : RoomDatabase() {
 
 abstract fun ShoppingItemDao(): ShoppingItemDao
-abstract fun categoriasDao(): CategoriasDao
 
     companion object {
         @Volatile
