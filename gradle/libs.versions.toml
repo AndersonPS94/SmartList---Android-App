@@ -14,7 +14,7 @@ datastore = "1.1.0"
 workManager = "2.8.1"
 androidxSplashScreen = "1.0.0"
 # VERSÃO CORRIGIDA: Compatível com Kotlin 2.0.21
-ksp = "2.0.0-1.0.23"
+ksp = "2.0.21-1.0.25"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
