@@ -17,6 +17,6 @@ object AppModule {
     fun provideShoppingItemRepository(
         db: ShoppingItemDatabase
     ) : ShoppingItemRepository {
-        return ShoppingItemRepositoryImpl(db.ShoppingItemDao)
+        return ShoppingItemRepositoryImpl(db.ShoppingItemDao())
     }
 }
