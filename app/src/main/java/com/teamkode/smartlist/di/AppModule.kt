@@ -1,6 +1,7 @@
 package com.teamkode.smartlist.di
 
-import com.teamkode.smartlist.data.local.database.ShoppingItemDatabase
+import com.teamkode.smartlist.data.local.database.ShoppingListDatabase
+import com.teamkode.smartlist.data.repository.ShoppingItemRepositoryImpl
 import com.teamkode.smartlist.domain.repository.ShoppingItemRepository
 import dagger.Module
 import dagger.Provides
@@ -14,9 +15,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideShoppingItemRepository(
-        db: ShoppingItemDatabase
-    ) : ShoppingItemRepository {
-        return ShoppingItemRepositoryImpl(db.ShoppingItemDao())
+    fun provideShoppingItemRepository(db: ShoppingListDatabase) : ShoppingItemRepository {
+        return ShoppingItemRepositoryImpl(db.shoppingItemDao())
     }
 }

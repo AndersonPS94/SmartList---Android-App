@@ -9,6 +9,6 @@ class ToggleItemPurchaseStatusUseCase @Inject constructor(
 ){
     suspend operator fun invoke(item: ShoppingItem){
         val updatedItem = item.copy(isPurchased = !item.isPurchased)
-        repository.updateItem(updatedItem)
+        repository.updateShoppingItem(updatedItem)
     }
 }

@@ -9,6 +9,6 @@ class InsertShoppingItemUseCase @Inject constructor(
 ){
     suspend operator fun invoke(item: ShoppingItem){
 
-        repository.insertItem(item)
+        repository.insertShoppingItem(item)
     }
 }

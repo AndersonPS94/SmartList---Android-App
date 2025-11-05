@@ -8,7 +8,7 @@ class DeleteShoppingItemUseCase @Inject constructor(
     private val shoppingItemRepository: ShoppingItemRepository
 ) {
     suspend operator fun invoke(item: ShoppingItem) {
-        shoppingItemRepository.deleteItem(item)
+        shoppingItemRepository.deleteShoppingItem(item)
     }
 }
 
