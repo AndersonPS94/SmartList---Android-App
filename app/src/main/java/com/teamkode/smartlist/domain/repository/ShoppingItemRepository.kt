@@ -10,6 +10,7 @@ interface ShoppingItemRepository {
     suspend fun deleteShoppingItem(shoppingItem: ShoppingItem)
     suspend fun updateShoppingItem(shoppingItem: ShoppingItem)
     suspend fun togglePurchasedStatus(itemId: Int, isPurchased: Boolean)
+
 }
 
 

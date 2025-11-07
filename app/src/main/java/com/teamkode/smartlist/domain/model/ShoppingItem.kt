@@ -1,5 +1,6 @@
 package com.teamkode.smartlist.domain.model
 
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
