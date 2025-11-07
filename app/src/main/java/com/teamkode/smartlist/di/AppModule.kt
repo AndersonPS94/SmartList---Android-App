@@ -16,9 +16,9 @@ object AppModule {
     @Provides
     @Singleton
     fun provideShoppingItemRepository(
-        db: ShoppingItemDatabase
+        db: ShoppingListDatabase
     ) : ShoppingItemRepository {
-        return ShoppingItemRepositoryImpl(db.ShoppingItemDao)
+        return ShoppingItemRepositoryImpl(db.shoppingItemDao())
 
     }
 }

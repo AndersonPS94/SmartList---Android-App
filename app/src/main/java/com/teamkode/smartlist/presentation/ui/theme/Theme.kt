@@ -1,6 +1,5 @@
-package com.teamkode.smartlist.ui.theme
+package com.teamkode.smartlist.presentation.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
