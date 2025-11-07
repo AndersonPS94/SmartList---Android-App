@@ -9,7 +9,8 @@ import com.teamkode.smartlist.domain.model.ShoppingItem
 
 @Database(
     entities = [ShoppingItem::class, Category::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class ShoppingListDatabase : RoomDatabase() {
 
